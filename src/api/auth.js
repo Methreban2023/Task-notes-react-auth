@@ -41,7 +41,11 @@ const getAllUsers = async () => {
   }
 };
 
-const storeToken = () => {
+const storeToken = (token) => {
+  localStorage.setItem("token", token);
+};
+
+const checkToken = () => {
   const token = localStorage.getItem("token");
   console.log(`token value is ${token}`);
   if (token) {
@@ -60,4 +64,4 @@ const storeToken = () => {
 const logout = () => {
   localStorage.removeItem("token");
 };
-export { login, register, me, getAllUsers, storeToken, logout };
+export { login, register, me, getAllUsers, checkToken, storeToken, logout };

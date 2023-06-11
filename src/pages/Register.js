@@ -12,6 +12,7 @@ const Register = () => {
       setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
     }
   };
+
   const { mutate: regFn } = useMutation({
     mutationFn: () => {
       register(userInfo);

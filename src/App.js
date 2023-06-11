@@ -9,12 +9,12 @@ import Note from "./pages/Note";
 import Users from "./pages/Users";
 import UserContext from "./context/UserContext";
 import { useEffect, useState } from "react";
-import { storeToken } from "./api/auth";
+import { checkToken } from "./api/auth";
 function App() {
   const [user, setUser] = useState(false);
 
   useEffect(() => {
-    setUser(storeToken());
+    setUser(checkToken());
   }, []);
 
   return (
